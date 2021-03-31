@@ -14,5 +14,27 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('');
 });
+
+
+    Route::get('/', 'FrontController@index')->name('index');
+    Route::get('/about', 'AboutController@index')->name('about');
+    Route::get('/menu', 'MenuController@index')->name('menu');
+    Route::get('/contact', 'ContactController@index')->name('contact');
+
+Route::prefix('admin')->middleware('auth')->group(function(){
+
+    Route::get('/','AdminController@index')->name('admin.index');
+    
+
+
+});
+
+
+Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
+
+
+
+
+
