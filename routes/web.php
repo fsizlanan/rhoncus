@@ -25,10 +25,11 @@ Route::get('/', function () {
 
 Route::prefix('admin')->middleware('auth')->group(function(){
 
-    Route::get('/','AdminController@index')->name('admin.index');
-    
-
-
+    Route::get('/','AdminController@index')->name('admin.index');  
+    Route::get('/home','HomeController@index')->name('admin.home');
+    Route::get('/contact','AdminContactController@index')->name('admin.contact');
+    Route::get('/about','AdminAboutController@index')->name('admin.about');
+    Route::get('/menu','AdminMenuController@index')->name('admin.menu');
 });
 
 
