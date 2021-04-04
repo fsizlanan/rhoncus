@@ -3,7 +3,7 @@
             <div class="row">
                 <div class="col-lg-2">
                     <div class="logo-area">
-                        <a href="index.html"><img src="assets/images/logo/logo2.png" alt="logo"></a>
+                        <a href="{{Route('index')}}"><img src="assets/images/logo/logo2.png" alt="logo"></a>
                     </div>
                 </div>
                 <div class="col-lg-10">
@@ -18,13 +18,6 @@
                             <li><a href="{{Route('about')}}">Hakkımızda</a></li>
                             <li><a href="{{Route('menu')}}">Menülerimiz</a></li>
                             <li><a href="{{Route('contact')}}">İletisim</a></li>
-                            <li><a href="#">blog</a>
-                                    <ul class="sub-menu">
-                                    <li><a href="blog-home.html">Blog Home</a></li>
-                                    <li><a href="blog-details.html">Blog Details</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="elements.html">Elements</a></li> 
                         </ul>
                     </div>
                 </div>

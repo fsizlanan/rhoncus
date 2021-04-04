@@ -6,7 +6,7 @@
 
  @section('css')
 
- @endsection
+ @endsection 
 
  @section('content')
    

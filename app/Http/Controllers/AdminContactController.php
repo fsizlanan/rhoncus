@@ -10,4 +10,7 @@ class AdminContactController extends Controller
 
         return view('admin.contact');
     }
+
+    
+    
 }
