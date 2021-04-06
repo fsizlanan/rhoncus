@@ -4,10 +4,13 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="csrf-token" content="{{ csrf_token() }}">  <!-- csrf_token ' daki _(alt tire) bile önemli, üst tire de çalışmaz -->
     <title>Admin Paneli</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{asset('assets/vendors/mdi/css/materialdesignicons.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/vendors/css/vendor.bundle.base.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/sweet-alert/sweetalert2.min.css')}}"> <!--sweet-alert eklendi-->
+
     <!-- endinject -->
     <!-- Plugin css for this page -->
     <!-- End Plugin css for this page -->
@@ -112,6 +115,15 @@
               <span class="menu-title">Menülerimiz</span>
             </a>
           </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{Route('admin.message')}}">
+              <span class="menu-icon">
+                <i class="mdi mdi-playlist-play"></i>
+              </span>
+              <span class="menu-title">Mesajlar</span>
+            </a>
+          </li>
+
  <!--
           <li class="nav-item menu-items">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
@@ -425,6 +437,8 @@
     <script src="{{asset('assets/js/misc.js')}}"></script>
     <script src="{{asset('assets/js/settings.js')}}"></script>
     <script src="{{asset('assets/js/todolist.js')}}"></script>
+    <script src="{{asset('assets/sweet-alert/sweetalert2.min.js')}}"> </script> <!--sweetalert js dosyasını çağırdık -->
+
     @yield('js')
     <!-- endinject -->
     <!-- Custom js for this page -->

@@ -11,12 +11,12 @@
  @section('content')
 
             <!-- Banner Area Starts -->
-    <section class="banner-area banner-area2 contact-bg text-center">
+    <section class="banner-area banner-area2 contact-bg text-center"> 
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1><i>Contact Us</i></h1>
-                    <p class="pt-2"><i>Beast kind form divide night above let moveth bearing darkness.</i></p>
+                    <h1><i>{{$list ? $list->ContactHead : ''}}</i></h1>
+                    <p class="pt-2"><i>{{$list ? $list->ContactHeadText : ''}}</i></p>
                 </div>
             </div>
         </div>
@@ -53,8 +53,8 @@
                             <i class="fa fa-home"></i>
                         </div>
                         <div class="info-text">
-                            <h5>California, United States</h5>
-                            <p>Santa monica bullevard</p>
+                            <h5>{{$list ? $list->ContactAdressHead : ''}}</h5>
+                            <p>{{$list ? $list->ContactAdressHeadSub : ''}}</p>
                         </div>
                     </div>
                     <div class="d-flex">
@@ -62,8 +62,8 @@
                             <i class="fa fa-phone"></i>
                         </div>
                         <div class="info-text">
-                            <h5>00 (440) 9865 562</h5>
-                            <p>Mon to Fri 9am to 6 pm</p>
+                            <h5>{{$list ? $list->ContactTelHead : ''}}</h5>
+                            <p>{{$list ? $list->ContactTelHeadSub : ''}}</p>
                         </div>
                     </div>
                     <div class="d-flex">
@@ -71,22 +71,23 @@
                             <i class="fa fa-envelope-o"></i>
                         </div>
                         <div class="info-text">
-                            <h5>support@colorlib.com</h5>
-                            <p>Send us your query anytime!</p>
+                            <h5>{{$list ? $list->ContactMailHead : ''}}</h5>
+                            <p>{{$list ? $list->ContactMailHeadSub : ''}}</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-9">
-                    <form action="#">
+                    <form action="" method="POST">
+                    @csrf
                         <div class="left">
-                            <input type="text" placeholder="Enter your name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" required>
-                            <input type="email" placeholder="Enter email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" required>
-                            <input type="text" placeholder="Enter subject" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter subject'" required>
+                            <input type="text" placeholder="Ad & Soyad" name="MassageName" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" required>
+                            <input type="email" placeholder="E-mail Adresi" name="MessageEmail" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" required>
+                            <input type="text" placeholder="Konu Başlığı" name="MessageSubject" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter subject'" required>
                         </div>
                         <div class="right">
-                            <textarea name="message" cols="20" rows="7"  placeholder="Enter Message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'" required></textarea>
+                            <textarea name="message" cols="20" rows="7"  placeholder="Detaylı Mesaj" id="MessajeText" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message'" required></textarea>
                         </div>
-                        <button type="submit" class="template-btn">subscribe now</button>
+                        <button type="submit" class="template-btn">Gönder</button>
                     </form>
                 </div>
             </div>
