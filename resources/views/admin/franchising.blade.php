@@ -2,25 +2,23 @@
 
 @section('css')
 
-    <style>
+<style>
+    .MessageStyle:disabled {
+        color: #000000;
 
-.MessageStyle:disabled {
-    color: #000000;
-    
-}
-
-    </style>
+    }
+</style>
 
 @endsection
 
 @section('content')
 
 <div class="page-header">
-    <h3 class="page-title"> Mesajlar </h3>
+    <h3 class="page-title"> Franchising Gönderileri </h3>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{route('admin.index')}}">Admin Panel</a></li>
-            <li class="breadcrumb-item active" aria-current="page"> Mesajlar </li>
+            <li class="breadcrumb-item active" aria-current="page"> Franchising </li>
         </ol>
     </nav>
 </div>
@@ -39,23 +37,27 @@
                                 <th>#</th>
                                 <th>Ad & Soyad</th>
                                 <th>E-mail</th>
-                                <th>Konu Başlığı</th>
-                                <th>Mesaj İçeriği</th>
+                                <th>Telefon Numarası</th>
+                                <th>Bayilik Talep Edilen İl</th>
+                                <th>Bayilik Talep Edilen İlçe</th>
+                                <th>Mesaj</th>
                                 <th>Gönderilme Tarihi</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($list as $item)
+                            @foreach ($franchisingList as $item)
                             <!-- Döngü Başlangıcı / liste veritabanından çekiliyor-->
 
                             <tr id=" {{$item->id}}">
                                 <td><a data-id="{{$item->id}}" href="javascript:void(0)" class="btn btn-danger deleteMessage">Sil <i class="fa fa-trash"></i></a></td>
 
                                 <td>{{$item->id}}</td>
-                                <td>{{$item->MassageName}}</td>
-                                <td>{{$item->MessageEmail}}</td>
-                                <td>{{$item->MessageSubject}}</td>
-                                <td><textarea class="form-control MessageStyle" name="" id="" cols="30" rows="10" disabled >{{$item->MessajeText}}</textarea></td>
+                                <td>{{$item->name}}</td>
+                                <td>{{$item->email}}</td>
+                                <td>{{$item->tel}}</td>
+                                <td>{{$item->sellerCity}}</td>
+                                <td>{{$item->sellerDistrict}}</td>
+                                <td><textarea class="form-control MessageStyle" name="" id="" cols="30" rows="10" disabled>{{$item->message}}</textarea></td>
                                 <td>{{\Carbon\Carbon::parse($item->created_at)->format("d-m-Y H:i:s")}}</td>
                             </tr>
 
@@ -100,7 +102,7 @@
 
                     $.ajax({
 
-                        url: "{{route('admin.message.delete') }}", //ajax için bir delete route belirttik
+                        url: "{{route('admin.franchising.delete') }}", //ajax için bir delete route belirttik
 
                         //method : "POST" bu şekilde de gönderilerilebilir.
 

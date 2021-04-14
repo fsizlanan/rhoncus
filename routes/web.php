@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminMenuController;
+use App\Http\Controllers\FrontController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,12 +19,17 @@ Route::get('/', function () {
     return view('');
 });
 
-
+Route::middleware('contact')->group(function(){
     Route::get('/', 'FrontController@index')->name('index'); 
-    Route::get('/about', 'AboutController@index')->name('about');
-    Route::get('/menu', 'MenuController@index')->name('menu');
-    Route::get('/contact', 'ContactController@index')->name('contact');
-    Route::post('/contact', 'ContactController@message');
+});
+
+Route::get('/about', 'AboutController@index')->name('about');
+Route::get('/menu', 'MenuController@index')->name('menu');
+Route::get('/contact', 'ContactController@index')->name('contact');
+Route::post('/contact', 'ContactController@message');
+Route::get('/franchising','FrontController@franchising')->name('franchising');
+Route::post('/franchising', 'FrontController@franchisingform');
+
 
 Route::prefix('admin')->middleware('auth')->group(function(){
 
@@ -33,9 +39,26 @@ Route::prefix('admin')->middleware('auth')->group(function(){
     Route::post('/contact','AdminContactController@add');
     Route::get('/about','AdminAboutController@index')->name('admin.about');
     Route::post('/about','AdminAboutController@add');
-    Route::get('/menu','AdminMenuController@index')->name('admin.menu');
+
+    Route::prefix('menu')->group(function(){
+        Route::get('/','AdminMenuController@list')->name('admin.menu');
+        Route::get('/add','AdminMenuController@addShow')->name('admin.menu.add');
+        Route::post('/add','AdminMenuController@add');
+        Route::post('/change-status', 'AdminMenuController@changeStatus')->name('admin.menu.changeStatus');
+        Route::post('/delete', 'AdminMenuController@delete')->name('admin.menu.delete');
+    
+    });
+
     Route::get('/message','AdminMessageController@index')->name('admin.message');
     Route::post('/delete', 'AdminMessageController@delete')->name('admin.message.delete');
+
+Route::prefix('franchising')->group(function(){
+    Route::get('/', 'AdminFranchisingController@index')->name('admin.franchising');
+    Route::post('/delete', 'AdminFranchisingController@delete')->name('admin.franchising.delete');
+
+
+});
+
 });
 
 

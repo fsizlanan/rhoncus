@@ -9,7 +9,7 @@
     <!-- plugins:css -->
     <link rel="stylesheet" href="{{asset('assets/vendors/mdi/css/materialdesignicons.min.css')}}">
     <link rel="stylesheet" href="{{asset('assets/vendors/css/vendor.bundle.base.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/sweet-alert/sweetalert2.min.css')}}"> <!--sweet-alert eklendi-->
+    <link rel="stylesheet" href="{{asset('assets/sweet-alert/sweetalert2.css')}}"> <!--sweet-alert eklendi-->
 
     <!-- endinject -->
     <!-- Plugin css for this page -->
@@ -123,7 +123,14 @@
               <span class="menu-title">Mesajlar</span>
             </a>
           </li>
-
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{Route('admin.franchising')}}">
+              <span class="menu-icon">
+                <i class="mdi mdi-playlist-play"></i>
+              </span>
+              <span class="menu-title">Franchising</span>
+            </a>
+          </li>
  <!--
           <li class="nav-item menu-items">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
@@ -437,7 +444,8 @@
     <script src="{{asset('assets/js/misc.js')}}"></script>
     <script src="{{asset('assets/js/settings.js')}}"></script>
     <script src="{{asset('assets/js/todolist.js')}}"></script>
-    <script src="{{asset('assets/sweet-alert/sweetalert2.min.js')}}"> </script> <!--sweetalert js dosyasını çağırdık -->
+    <script src="{{asset('assets/sweet-alert/sweetalert2.js')}}"> </script> <!--sweetalert js dosyasını çağırdık -->
+    <script src="{{asset('assets/sweet-alert/sweetalert2.all.js')}}"></script>
 
     @yield('js')
     <!-- endinject -->

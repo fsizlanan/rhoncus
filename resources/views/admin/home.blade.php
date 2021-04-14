@@ -2,7 +2,7 @@
 
     @section('css')
 
-    @endsection
+    @endsection 
 
 
 
