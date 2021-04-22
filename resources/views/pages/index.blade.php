@@ -54,7 +54,7 @@
     
     <!-- Table Area Starts -->
 
-    @include('layouts.rezervation')
+<!--    @include('layouts.rezervation')   -->
 
     <!-- Table Area End -->
 

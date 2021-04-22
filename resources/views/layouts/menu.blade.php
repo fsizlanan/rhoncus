@@ -19,6 +19,7 @@
                             <li><a href="{{Route('menu')}}">Menülerimiz</a></li>
                             <li><a href="{{Route('contact')}}">İletisim</a></li>
                             <li><a href="{{Route('franchising')}}">Franchising</a></li>
+                            <li><a href="{{Route('galery')}}">Basında Biz</a></li>
 
                         </ul>
                     </div>

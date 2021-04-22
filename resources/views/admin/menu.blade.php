@@ -37,7 +37,6 @@ Menü Bilgileri
                 <th>Düzenle</th>
                 <th>Sil</th>
                 <th>Sıralama</th>
-                <th>#</th>
                 <th>Menü Adı</th>
                 <th>Resim Adı</th>
                 <th>Fiyat</th>
@@ -50,12 +49,11 @@ Menü Bilgileri
             <tbody>
               @foreach ($list as $item)
 
-              <tr id=" {{$item->id}}">
+              <tr id="{{$item->id}}">
                 <td><a href="{{route('admin.menu.add', ['menuID'=>$item->id])}}" class="btn btn-warning editMenu">Düzenle <i class="fa fa-edit"></i></a></td>
                 <td><a data-id="{{$item->id}}" href="javascript:void(0)" class="btn btn-danger deleteMenu">Sil <i class="fa fa-trash"></i></a></td>
 
-                <td>{{$item->order}}</td>
-                <td>{{$item->id}}</td>
+                <td>{{$item->order}}. Sırada</td>
                 <td>{{$item->MenuName}}</td>
                 <td>{{$item->image}}</td>
                 <td>{{$item->MenuPrice}}</td>
@@ -139,13 +137,13 @@ Menü Bilgileri
 
   $('.deleteMenu').click(function() {
 
-    let MenuID = $(this).attr('data-id'); //attr('data.id'); şeklinde de alınabilir.
+    let menuID = $(this).attr('data-id'); //attr('data.id'); şeklinde de alınabilir.
     let self = $(this); //basılı olan elementin elemanları atanmış oldu
 
 
     Swal.fire({
       title: "Emin misiniz?",
-      text: MenuID + ' ID li menü bilgisini silmek istediğinizden emin misin?',
+      text:'Seçtiğiniz menü bilgisini silmek istediğinizden emin misin?',
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
@@ -161,7 +159,7 @@ Menü Bilgileri
           type: "POST",
           async: false, //Async:false olarak ayarladığında öncelikle işleminin tamamlanması beklenir ve sonraki işleme o şekilde geçilir. true olarak ayarladığında ise işlemin tamamlanıp tamamlanmadığını kontrol etmez.
           data: {
-            menuID: MenuID
+            menuID: menuID
           },
           success: function(response) //success'i succes yazdığım için 2 saat hata aradım
           { //bu fonksiyon ile veri karşılandı  
@@ -171,7 +169,7 @@ Menü Bilgileri
               title: 'Başarılı !',
               text: "Silme işlemi başarılı",
               confirmButtonText: 'Tamam',
-            });
+            });  
 
             $("tr#" + menuID).remove();
 

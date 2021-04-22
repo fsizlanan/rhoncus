@@ -10,7 +10,8 @@
          </div>
          <div class="row">
              <div class="col-lg-8 offset-lg-2">
-                 <form action="#">
+                 <form action="#" method="POST">
+                 @csrf
                      <div class="input-group mb-3">
                          <div class="input-group-prepend">
                              <span class="input-group-text"><i class="fa fa-calendar"></i></span>

@@ -34,7 +34,7 @@ $educationText = "Yeni Menü Ekleme";
         <div class="card">
             <div class="card-body">
                 <form class="forms-sample" id="createEducationForm" method="POST" action="" enctype="multipart/form-data">
-                @csrf
+                    @csrf
 
                     @if ($menu)
                     <input type="hidden" name="menuID" value="{{$menu->id}}">
@@ -47,38 +47,38 @@ $educationText = "Yeni Menü Ekleme";
                         @error('MenuName')
                         <div class="alert alert-danger">{{$message}}</div>
                         @enderror
-                        </div>
+                    </div>
                     @php if($menu){ @endphp
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label for="image">Resim Değiştir</label>
-                                    <input type="file" class="form-control" name="image" id="image" placeholder="Resim">
-                                    @error('image')
-                                    <div class="alert alert-danger">{{$message}}</div>
-                                    @enderror
-                                </div>
-                                
-                                <div class="col-md-6">
-                                    <img width="30%" src="{{asset($menu->image ? 'storage/'.$menu->image : 'assets/images/faces/face15.jpg')}}" alt="">
-                                </div>
-                                
-                            </div>
-                        </div>
-                    @php } else{ @endphp
-                    
                     <div class="form-group">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label for="image">Resim Ekle</label>
-                                    <input type="file" class="form-control" name="image" id="image" placeholder="Resim">
-                                    @error('image')
-                                    <div class="alert alert-danger">{{$message}}</div>
-                                    @enderror
-                                </div>                                
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="image">Resim Değiştir</label>
+                                <input type="file" class="form-control" name="image" placeholder="Resim" value="{{$menu ? $menu->image : ''}}">
+                                @error('image')
+                                <div class="alert alert-danger">{{$message}}</div>
+                                @enderror
+                            </div>
+
+                            <div class="col-md-6">
+                                <img width="30%" src="{{asset($menu->image ? 'storage/'.$menu->image : 'assets/images/faces/face15.jpg')}}" alt="">
+                            </div>
+
+                        </div>
+                    </div>
+                    @php } else{ @endphp
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="image">Resim Ekle</label>
+                                <input type="file" class="form-control" name="image" id="image" placeholder="Resim">
+                                @error('image')
+                                <div class="alert alert-danger">{{$message}}</div>
+                                @enderror
                             </div>
                         </div>
-                    
+                    </div>
+
                     @php } @endphp
                     <div class="form-group">
                         <label for="MenuPrice">Menü Fiyatı</label>
@@ -136,45 +136,19 @@ $educationText = "Yeni Menü Ekleme";
 
     createButton.click(function() {
 
-        $('#createEducationForm').submit();
-
-        if ($('#education_date').val().trim() == '') {
+        if ($('#image').val() == '') {
 
             Swal.fire({
                 icon: 'info',
                 title: 'Uyarı !',
-                text: 'Lütfen Tarih Giriniz!',
+                text: 'Lütfen Resim Giriniz!',
                 confirmButtonText: 'Tamam',
             })
-
-
-        } else if ($('#university_name').val().trim() == '') {
-
-            Swal.fire({
-                icon: 'info',
-                title: 'Uyarı !',
-                text: 'Lütfen Üniversite Adı Giriniz!',
-                confirmButtonText: 'Tamam',
-            })
-
-
-        } else if ($('#university_branch').val().trim() == '') {
-
-            Swal.fire({
-                icon: 'info',
-                title: 'Uyarı !',
-                text: 'Lütfen Üniversite Bölümü Giriniz!',
-                confirmButtonText: 'Tamam',
-            })
-
 
         } else {
-
-
             $('#createEducationForm').submit();
 
         }
-
 
 
     });

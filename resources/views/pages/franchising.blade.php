@@ -140,15 +140,16 @@ Franchising
         confirmButtonText: 'Evet, Gönder '
 
       }).then((result) => {
-        setTimeout(()=>{
-          $('#SubmitForm').submit();
-        },2000)
         if (result.isConfirmed) {
           Swal.fire(
             'Gönderildi!',
             'Formunuz gönderildi.',
             'success'
           )
+          setTimeout(()=>{
+          $('#SubmitForm').submit(); 
+        },2000)
+
         }
       })
 

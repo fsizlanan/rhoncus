@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\contactRequest;
 use App\Models\ContactModel;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,7 @@ class AdminContactController extends Controller
         return view('admin.contact',compact('list'));
     }
 
-    public function add(request $request){
+    public function add(contactRequest $request){
 
 
         ContactModel::where('id',1)

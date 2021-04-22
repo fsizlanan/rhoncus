@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\aboutRequest;
 use App\Models\AboutModel;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,7 @@ class AdminAboutController extends Controller
         return view('admin.about',compact('list'));
     }
 
-    public function add(Request $request){
+    public function add(aboutRequest $request){
         AboutModel::where('id',1)
         ->update([
 

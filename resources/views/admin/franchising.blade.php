@@ -48,7 +48,7 @@
                             @foreach ($franchisingList as $item)
                             <!-- Döngü Başlangıcı / liste veritabanından çekiliyor-->
 
-                            <tr id=" {{$item->id}}">
+                            <tr id="{{$item->id}}">
                                 <td><a data-id="{{$item->id}}" href="javascript:void(0)" class="btn btn-danger deleteMessage">Sil <i class="fa fa-trash"></i></a></td>
 
                                 <td>{{$item->id}}</td>
@@ -87,7 +87,7 @@
 
         Swal.fire({
             title: "Emin misiniz?",
-            text: "ID'si " + MessageID + ' olan mesajı silmek istediğinizden emin misin?',
+            text: 'Seçili franchising istek mesajını silmek istediğinizden emin misin?',
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',

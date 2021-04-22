@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\AboutModel;
 use App\Models\ContactModel;
+use App\Models\footerModel;
 use App\Models\franchisingModel;
 use App\Models\menuModel;
 use Illuminate\Http\Request;
@@ -18,7 +19,7 @@ class FrontController extends Controller
             ->orderBy('order', 'ASC')
             ->get();
         $list = AboutModel::find(1);
-
+        
         return view('pages.index', compact('list_menu', 'list'));
         // return view('pages.index');
     }
@@ -47,5 +48,10 @@ class FrontController extends Controller
 
         return redirect()->route('franchising');
         
+    }
+
+    public function galery(){
+
+        return view('pages.galery');
     }
 }

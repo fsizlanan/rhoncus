@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\menuRequest;
 use App\Models\menuModel;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -66,24 +67,27 @@ class AdminMenuController extends Controller
     }
 
 
-    public function add(Request $request)
+    public function add(menuRequest $request)
     {
-
         $status     =   0;
         $order      =   $request->order;
 
+        if ($request->status == 'off') {
+            $status = 0;
+        }
+
+        if($request->status){
+            $status = 1;
+        }
 
         if (isset($request->menuID)) {
 
             $id     =       $request->menuID;
 
-            if ($request->status == 'on') {
-                $status = 1;
-            }
-
             $menu       =   menuModel::find($id);
 
             if (isNull($menu->image)) {
+
             } else {
                 $file               =    $request->file('image');
                 $extension          =    $file->getClientOriginalExtension(); //resim uzantısı png gibi
@@ -109,6 +113,7 @@ class AdminMenuController extends Controller
 
             return redirect()->route('admin.menu');
         } else {
+
 
             $file               =    $request->file('image');
             $extension          =    $file->getClientOriginalExtension(); //resim uzantısı png gibi

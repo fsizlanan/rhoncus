@@ -2,13 +2,12 @@
 
 namespace App\Http\Middleware;
 
-use Closure;
-use App\Models\ContactModel;
 use App\Models\footerModel;
+use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
 
-class contact
+class footerMiddleware
 {
     /**
      * Handle an incoming request.
@@ -19,10 +18,9 @@ class contact
      */
     public function handle(Request $request, Closure $next)
     {
-        $contactList = ContactModel::find(1);
+        $footerList = footerModel::find(1);
 
-        View::share('contactList',$contactList);
-
+        View::share('footerList',$footerList);
         return $next($request);
     }
 }

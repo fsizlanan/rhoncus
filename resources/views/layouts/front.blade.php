@@ -51,7 +51,7 @@
                     <div class="col-md-6">
                         <div class="single-widget single-widget1">
                             <a href="index.html"><img src="assets/images/logo/logo2.png" alt=""></a>
-                            <p class="mt-3">Which morning fourth great won't is to fly bearing man. Called unto shall seed, deep, herb set seed land divide after over first creeping. First creature set upon stars deep male gathered said she'd an image spirit our</p>
+                            <p class="mt-3">{{$footerList->footertext}}</p>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -62,7 +62,7 @@
                                     <i class="fa fa-map-marker"></i>
                                 </div>
                                 <div class="info-text">
-                                    <p>1234 Some St San Francisco, CA 94102, US 1.800.123.4567 </p>
+                                    <p>{{$contactList->ContactAdressHead.' '. $contactList->ContactAdressHeadSub}}</p>
                                 </div>
                             </div>
                             <div class="d-flex">
@@ -78,7 +78,7 @@
                                     <i class="fa fa-envelope-o"></i>
                                 </div>
                                 <div class="info-text">
-                                    <p>support@axiomthemes.com</p>
+                                    <p>{{$contactList->ContactMailHead}}</p>
                                 </div>
                             </div>
                         </div>
@@ -99,11 +99,11 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> <a hr
                         <div class="social-icons">
                             <ul>
                                 <li class="no-margin">Bizi takip edin</li>
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-                                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                <li><a href="{{$footerList->facebook}}" alt="blank"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="{{$footerList->twitter}}"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="{{$footerList->gooleplus}}"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a href="{{$footerList->pinterest}}"><i class="fa fa-pinterest"></i></a></li>
+                                <li><a href="{{$footerList->instagram}}"><i class="fa fa-instagram"></i></a></li>
                             </ul>
                         </div>
                     </div>
