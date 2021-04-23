@@ -188,7 +188,7 @@
                   </div>
                 </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item preview-item">
+                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
                     <div class="preview-icon bg-dark rounded-circle">
                       <i class="mdi mdi-logout text-danger"></i>
@@ -198,6 +198,9 @@
                     <p class="preview-subject mb-1"><button class="btn btn-primary btn-danger" type="submit">Çıkış Yap</button> </p>
                   </div>
                 </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST">
+                  @csrf
+                </form>
                 <div class="dropdown-divider"></div>
                 <p class="p-3 mb-0 text-center"> <button class="btn btn-primary">Gelişmiş Ayarlar</button></p>
               </div>
