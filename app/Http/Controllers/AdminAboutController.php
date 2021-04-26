@@ -23,11 +23,11 @@ class AdminAboutController extends Controller
             'special11'     => $request->special11,
             'special12'     => $request->special12,
             'special1About' => $request->special1About,
-            'special1Price' => $request->special1Price,
+       //     'special1Price' => $request->special1Price,
             'special21'     => $request->special21,
             'special22'     => $request->special22,
             'special2About' => $request->special2About,
-            'special2Price' => $request->special2Price,
+       //     'special2Price' => $request->special2Price,
             'specialSubHead'=> $request->specialSubHead,
 
         ]);

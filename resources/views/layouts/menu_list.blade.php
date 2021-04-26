@@ -18,7 +18,6 @@
                      <div class="food-content">
                          <div class="d-flex justify-content-between">
                              <h5>{{$item->MenuName}}</h5>
-                             <span class="style-change">{{$item->MenuPrice.' ₺'}}</span>
                          </div>
                          <p class="pt-3">{{$item->MenuContact}}</p>
                      </div>

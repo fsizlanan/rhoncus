@@ -26,7 +26,7 @@ class menuRequest extends FormRequest
         return [
             
             'MenuName' => 'required',
-            'MenuPrice' => 'required',
+        //    'MenuPrice' => 'required',
             'MenuContact' => 'required',
        //     'image' => 'required',
         ];
@@ -36,7 +36,7 @@ class menuRequest extends FormRequest
     {
         return [
             'MenuName.required' => 'Boş bırakılamaz',
-            'MenuPrice.required' => 'Boş bırakılamaz',
+        //    'MenuPrice.required' => 'Boş bırakılamaz',
             'MenuContact.required' => 'Boş bırakılamaz',
         //    'image.required' => 'Boş bırakılamaz'
 

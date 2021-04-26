@@ -80,7 +80,7 @@ $educationText = "Yeni Menü Ekleme";
                     </div>
 
                     @php } @endphp
-                    <div class="form-group">
+              <!--      <div class="form-group">
                         <label for="MenuPrice">Menü Fiyatı</label>
                         <input type="text" class="form-control" name="MenuPrice" id="MenuPrice" placeholder="Menü Fiyatı" value="{{$menu ? $menu->MenuPrice : ''}}">
                         @error('MenuPrice')
@@ -88,6 +88,7 @@ $educationText = "Yeni Menü Ekleme";
                         @enderror
 
                     </div>
+                    -->
                     <div class="form-group">
                         <label for="MenuContact">Menü Açıklaması</label>
                         <textarea class="form-control" name="MenuContact" id="MenuContact" cols="30" rows="7" placeholder="Menü Açıklaması" value="{{$menu ? $menu->MenuContact : ''}}">{{$menu ? $menu->MenuContact : ''}}</textarea>

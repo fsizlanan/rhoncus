@@ -99,7 +99,7 @@ class AdminMenuController extends Controller
                 $menu->image         =     'image/' . $fileOriginalName;
             }
             $menu->MenuName  =   $request->MenuName;
-            $menu->MenuPrice  =   $request->MenuPrice;
+       //     $menu->MenuPrice  =   $request->MenuPrice;
             $menu->MenuContact =  $request->MenuContact;
             $menu->status     =   $status;
             $menu->order      =   $order ? $order : 999;
@@ -126,7 +126,7 @@ class AdminMenuController extends Controller
             menuModel::create([
 
                 'MenuName'   =>   $request->MenuName,
-                'MenuPrice'  =>   $request->MenuPrice,
+          //      'MenuPrice'  =>   $request->MenuPrice,
                 'MenuContact' =>   $request->MenuContact,
                 'status'     =>   $status,
                 'order'      =>   $order ? $order : 999,

@@ -210,42 +210,20 @@ Basında Biz
 <section>
   <div class="gallery" id="gallery">
   <div class="gallery-item">
-      <div class="content"><img src="{{asset('images/rhoncus1.jpeg')}}" alt=""></div>
+      <div class="content"><img src="{{asset('images/rhoncus1.jpg')}}" alt=""></div>
     </div>
     <div class="gallery-item">
-      <div class="content"><img src="{{asset('images/rhoncus2.jpeg')}}" alt=""></div>
+      <div class="content"><img src="{{asset('images/rhoncus2.JPG')}}" alt=""></div>
     </div>
     <div class="gallery-item">
-      <div class="content"><img src="{{asset('images/rhoncus3.jpeg')}}" alt=""></div>
+      <div class="content"><img src="{{asset('images/rhoncus3.PNG')}}" alt=""></div>
     </div>
     <div class="gallery-item">
-      <div class="content"><img src="{{asset('images/rhoncus4.jpeg')}}" alt=""></div>
+      <div class="content"><img src="{{asset('images/rhoncus4.PNG')}}" alt=""></div>
     </div>
     <div class="gallery-item">
-      <div class="content"><img src="{{asset('images/rhoncus5.jpeg')}}" alt=""></div>
-    </div>
-    <div class="gallery-item">
-      <div class="content"><img src="{{asset('images/rhoncus6.jpeg')}}" alt=""></div>
-    </div>
-    <div class="gallery-item">
-      <div class="content"><img src="{{asset('images/rhoncus7.jpeg')}}" alt=""></div>
-    </div>
-    <div class="gallery-item">
-      <div class="content"><img src="{{asset('images/rhoncus8.jpeg')}}" alt=""></div>
-    </div>
-    <div class="gallery-item">
-      <div class="content"><img src="{{asset('images/rhoncus9.jpeg')}}" alt=""></div>
-    </div>
-    <div class="gallery-item">
-      <div class="content"><img src="{{asset('images/rhoncus10.jpeg')}}" alt=""></div>
-    </div>
-    <div class="gallery-item">
-      <div class="content"><img src="{{asset('images/rhoncus11.jpeg')}}" alt=""></div>
-    </div>
-    <div class="gallery-item">
-      <div class="content"><img src="{{asset('images/rhoncus12.jpeg')}}" alt=""></div>
-    </div>
- 
+      <div class="content"><img src="{{asset('images/rhoncus5.JPG')}}" alt=""></div>
+    </div> 
   </div>
 </section>
 

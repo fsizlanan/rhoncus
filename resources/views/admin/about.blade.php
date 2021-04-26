@@ -70,14 +70,15 @@
           @enderror
 
         </div>
-        <div class="form-group">
+    <!--    <div class="form-group">
           <label for="special1Price">Special Ürün 1 Fiyat Bilgisi</label>
           <input type="text" class="form-control" id="special1Price" name="special1Price" placeholder="Special Ürün 1 Fiyat Bilgisi" value="{{$list ? $list->special1Price : ''}}">
           @error('special1Price')
           <div class="alert alert-danger">{{$message}}</div>
           @enderror
 
-        </div>
+        </div>  
+-->
         <div class="form-group">
           <label for="special21">Special Ürün 2 Turuncu Başlık</label>
           <input type="text" class="form-control" id="special21" name="special21" placeholder="Special Ürün 2 Turuncu Başlık" value="{{$list ? $list->special21 : ''}}">
@@ -101,7 +102,7 @@
           <div class="alert alert-danger">{{$message}}</div>
           @enderror
 
-        </div>
+   <!--     </div>
         <div class="form-group">
           <label for="special2Price">Special Ürün 2 Fiyat Bilgisi</label>
           <input type="text" class="form-control" id="special2Price" name="special2Price" placeholder="Special Ürün 2 Fiyat Bilgisi" value="{{$list ? $list->special2Price : ''}}">
@@ -110,7 +111,7 @@
           @enderror
 
         </div>
-
+-->
         <!--      <div class="form-check form-check-flat form-check-primary">
                         <label class="form-check-label">
                           <input type="checkbox" class="form-check-input"> Remember me </label>
